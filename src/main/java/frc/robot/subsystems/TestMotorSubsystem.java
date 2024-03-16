@@ -4,6 +4,8 @@
 
 package frc.robot.subsystems;
 
+import java.util.function.DoubleSupplier;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
@@ -16,11 +18,10 @@ public class TestMotorSubsystem extends SubsystemBase {
   public TestMotorSubsystem() {}
 
   @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
-  }
+  public void periodic() {}
 
   public void setTestMotorSpeed(double speed) {
+    SmartDashboard.putNumber("TestMotor Speed", speed);
     m_testMotor.set(speed);
   }
 

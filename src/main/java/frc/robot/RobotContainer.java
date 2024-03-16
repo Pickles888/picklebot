@@ -13,7 +13,7 @@ import frc.robot.subsystems.TestMotorSubsystem;
 public class RobotContainer {
 
   private CommandXboxController m_controller = new  CommandXboxController(0);
-  private TestMotorSubsystem m_testMotorSubsystem = new TestMotorSubsystem();
+  public TestMotorSubsystem m_testMotorSubsystem = new TestMotorSubsystem();
   
 
   public RobotContainer() {
@@ -21,8 +21,11 @@ public class RobotContainer {
   }
 
   private void configureBindings() {
-    m_controller.a().onTrue(
-      new SetTestMotorSpeed(m_testMotorSubsystem, 0.8)
+    m_testMotorSubsystem.setDefaultCommand(
+      new SetTestMotorSpeed(
+        m_testMotorSubsystem,
+        () -> (m_controller.getRightTriggerAxis() - m_controller.getLeftTriggerAxis()) / 2
+      )
     );
   }
 
