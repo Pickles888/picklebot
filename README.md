@@ -1,4 +1,4 @@
-# Im bad at this (:
+# Im bad at this :)
 
 my first robot code
 
