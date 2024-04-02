@@ -24,7 +24,7 @@ public class RobotContainer {
     m_testMotorSubsystem.setDefaultCommand(
       new SetTestMotorSpeed(
         m_testMotorSubsystem,
-        () -> (m_controller.getRightTriggerAxis() - m_controller.getLeftTriggerAxis()) / 2
+        () -> (m_controller.getRightTriggerAxis() - m_controller.getLeftTriggerAxis()) / 1.5
       )
     );
   }
